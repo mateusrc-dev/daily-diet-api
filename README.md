@@ -20,3 +20,4 @@
 ➡️ regras de negócio: 
 - [ ] ao o usuário fazer requisições, deve ser possível identificarmos o usuário entre as requisições 
 - [ ] se o usuário tentar listar refeições, usuário só pode visualizar refeições que ele criou
+- [ ] se o usuário tentar editar os dados de uma determinada refeição, deve ser possível editar uma determinada refeição pelo id dela
