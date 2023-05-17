@@ -15,13 +15,21 @@ export async function usersRoutes(app: FastifyInstance) {
 
     const { name, email, password } = createUserSchema.parse(request.body)
 
+    const userId = crypto.randomUUID()
+
     await knex('users').insert({
-      id: crypto.randomUUID(),
+      id: userId,
       name,
       email,
       password,
     })
 
-    return reply.status(201).send()
+    return reply
+      .cookie('userId', userId, {
+        path: '/',
+        maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
+      })
+      .status(201)
+      .send()
   })
 }
