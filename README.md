@@ -18,6 +18,7 @@
 - [ ] O usuário só pode visualizar, editar e apagar as refeições o qual ele criou
 
 ➡️ regras de negócio: 
+- [ ] se o usuário tentar criar uma conta, deve ser possível o usuário criar essa conta
 - [ ] ao o usuário fazer requisições, deve ser possível identificarmos o usuário entre as requisições 
 - [ ] se o usuário tentar listar refeições, usuário só pode visualizar refeições que ele criou
 - [ ] se o usuário tentar editar os dados de uma determinada refeição, deve ser possível editar uma determinada refeição pelo id dela
