@@ -15,10 +15,10 @@
     - Quantidade total de refeições dentro da dieta
     - Quantidade total de refeições fora da dieta
     - Melhor sequência por dia de refeições dentro da dieta
-- [ ] O usuário só pode visualizar, editar e apagar as refeições o qual ele criou
+- [x] O usuário só pode visualizar, editar e apagar as refeições o qual ele criou
 
 ➡️ regras de negócio: 
 - [x] se o usuário tentar criar uma conta, deve ser possível o usuário criar essa conta
 - [x] ao o usuário fazer requisições, deve ser possível identificarmos o usuário entre as requisições 
 - [x] se o usuário tentar listar refeições, usuário só pode visualizar refeições que ele criou
-- [ ] se o usuário tentar editar os dados de uma determinada refeição, deve ser possível editar uma determinada refeição pelo id dela
+- [x] se o usuário tentar editar os dados de uma determinada refeição, deve ser possível editar uma determinada refeição pelo id dela
