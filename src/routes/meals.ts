@@ -90,4 +90,52 @@ export async function mealsRoutes(app: FastifyInstance) {
 
     return reply.status(201).send()
   })
+
+  app.put(
+    '/:id',
+    { preHandler: [checkUserIdExist] },
+    async (request, reply) => {
+      const updateSnackSchema = z.object({
+        name: z.string(),
+        description: z.string(),
+        dietIsOk: z.boolean(),
+      })
+
+      const updateSnackParamSchema = z.object({
+        id: z.string().uuid(),
+      })
+
+      const { id } = updateSnackParamSchema.parse(request.params)
+
+      const { name, description, dietIsOk } = updateSnackSchema.parse(
+        request.body,
+      )
+
+      await knex('meals')
+        .update({
+          name,
+          description,
+          dietIsOk: dietIsOk === true ? 1 : 0,
+        })
+        .where('id', id)
+
+      return reply.status(201).send()
+    },
+  )
+
+  app.delete(
+    '/:id',
+    { preHandler: [checkUserIdExist] },
+    async (request, reply) => {
+      const updateSnackParamSchema = z.object({
+        id: z.string().uuid(),
+      })
+
+      const { id } = updateSnackParamSchema.parse(request.params)
+
+      await knex('meals').where('id', id).delete()
+
+      return reply.status(201).send()
+    },
+  )
 }
