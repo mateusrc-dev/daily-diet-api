@@ -60,10 +60,11 @@ export async function mealsRoutes(app: FastifyInstance) {
     }
 
     return {
-      countMeals,
-      mealsDietTrueCount,
-      mealsDietFalseCount,
-      maxNumberSequence: Math.max(...arraySequences),
+      totalAmountOfMeals: countMeals,
+      totalAmountOfMealsTrueDiet: mealsDietTrueCount,
+      totalAmountOfMealsFalseDiet: mealsDietFalseCount,
+      highestSequenceOfDietsPerformed:
+        arraySequences.length === 0 ? 0 : Math.max(...arraySequences),
     }
   })
 
@@ -111,15 +112,16 @@ export async function mealsRoutes(app: FastifyInstance) {
         request.body,
       )
 
-      await knex('meals')
+      const snackUpdate = await knex('meals')
         .update({
           name,
           description,
           dietIsOk: dietIsOk === true ? 1 : 0,
         })
         .where('id', id)
+        .returning('*')
 
-      return reply.status(201).send()
+      return reply.status(201).send({ snackUpdate })
     },
   )
 
