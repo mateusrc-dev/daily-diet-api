@@ -28,11 +28,11 @@
 - if the user tries to edit the data of a certain meal, it must be possible to edit a certain meal by its id
 
 ## Some libs used in the application:
-sqlite3 -> relational database → easy to migrate to another database if necessary
-fastify/cookie -> we will use a cookie to identify the user who is creating a diet
-dotenv -> let's use dotenv to read the .env file inside NodeJs
-fastify -> similar to express → brings traditional part used in building an API (dealing with routes, parameters, headers, responses in JSON, understands requests in JSON)
-knex -> a query builder in which we don't need to focus much on learning SQL and we can focus on the applied language -> it is a query builder, making it easy to write queries with JS code
-zod -> to validate data as application environment variables, data sent as parameters in routes
+- sqlite3 -> relational database → easy to migrate to another database if necessary
+- fastify/cookie -> we will use a cookie to identify the user who is creating a diet
+- dotenv -> let's use dotenv to read the .env file inside NodeJs
+- fastify -> similar to express → brings traditional part used in building an API (dealing with routes, parameters, headers, responses in JSON, understands requests in JSON)
+- knex -> a query builder in which we don't need to focus much on learning SQL and we can focus on the applied language -> it is a query builder, making it easy to write queries with JS code
+- zod -> to validate data as application environment variables, data sent as parameters in routes
 
 ### If you want to test the application on your machine, download the repository and run the 'npm run dev' command in the repository terminal, you can use insomnia to test the application routes 🚀
